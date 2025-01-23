@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal da Turma</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background: url('https://img.freepik.com/vetores-gratis/material-escolar-no-quadro-negro_23-2148587747.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #333;
+        }
+
+        header {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            text-align: center;
+            font-size: 28px;
+            font-weight: bold;
+            color: white;
+        }
+
+        .content-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .calendar-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            padding: 20px;
+            width: 100%;
+            max-width: 100%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .calendar-container h2 {
+            font-size: 26px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .calendar-container p {
+            font-size: 18px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .calendar-selector input {
+            padding: 12px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            cursor: pointer;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .calendar-selector button {
+            background-color: #333;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        .calendar-selector button:hover {
+            background-color: #555;
+        }
+
+        .example-content {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            padding: 20px;
+            width: 100%;
+            max-width: 600px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: left;
+            margin-bottom: 20px;
+        }
+
+        .example-content h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .example-content p {
+            font-size: 18px;
+            line-height: 1.5;
+            margin: 10px 0;
+            color: #555;
+        }
+
+        .view-more {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .view-more a {
+            background-color: #007BFF;
+            color: white;
+            text-decoration: none;
+            padding: 12px 30px;
+            border-radius: 5px;
+            font-size: 18px;
+            font-weight: 600;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease;
+        }
+
+        .view-more a:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        Minhas Aulas 2025! - Conteúdo Diário
+    </header>
+
+    <div class="content-wrapper">
+        <div class="calendar-container">
+            <h2>Escolha a data</h2>
+            <p>Selecione uma data no calendário abaixo para acessar o conteúdo diário programado para esse dia. Após escolher, você verá as atividades e materiais disponíveis para estudo.</p>
+            <div class="calendar-selector">
+                <input type="date" id="calendario">
+                <button onclick="filtrarPorData()">Ver Conteúdos</button>
+            </div>
+        </div>
+
+        <!-- Conteúdos com IDs específicos -->
+        <div id="conteudo-20250109" class="example-content">
+            <h3>Conteúdo de Português - Análise Sintática</h3>
+            <p><strong>Data:</strong> 09/01/2025</p>
+            <p><strong>Tema:</strong> Análise de Orações Coordenadas e Subordinadas.</p>
+            <p><strong>Resumo:</strong> Estudo sobre classificação e construção de exemplos práticos de orações coordenadas e subordinadas.</p>
+            <div class="view-more">
+                <a href="ModeloConteudo.html">Ver Mais</a>
+            </div>
+        </div>
+
+ <div id="conteudo-20250123" class="example-content">
+            <h3>Conteúdo de Português - teste</h3>
+            <p><strong>Data:</strong> 23/01/2025</p>
+            <p><strong>Tema:</strong> teste.</p>
+            <p><strong>Resumo:</strong> teste</p>
+            <div class="view-more">
+                <a href="ModeloConteudo.html">Ver Mais</a>
+            </div>
+        </div>
+
+ <div id="conteudo-20250123" class="example-content">
+            <h3>Conteúdo de Português - outro teste 😁😁</h3>
+            <p><strong>Data:</strong> 23/01/2025</p>
+            <p><strong>Tema:</strong> teste.</p>
+            <p><strong>Resumo:</strong> teste</p>
+            <div class="view-more">
+                <a href="ModeloConteudo.html">Ver Mais</a>
+            </div>
+        </div>
+
+        <!-- Adicione outros conteúdos com IDs e datas específicas -->
+
+    </div>
+
+    <script>
+        function filtrarPorData() {
+            const dataSelecionada = document.getElementById('calendario').value;
+            console.log('Data selecionada:', dataSelecionada); // Log para verificar a data
+
+            if (!dataSelecionada) {
+                alert('Por favor, selecione uma data!');
+                return;
+            }
+
+            const dataFormatada = dataSelecionada.replace(/-/g, ''); // Remove os traços
+            console.log('Data formatada:', dataFormatada); // Log para depuração
+
+            const conteudos = document.querySelectorAll('.example-content');
+            conteudos.forEach(conteudo => {
+                conteudo.style.display = 'none'; // Esconde todos os conteúdos
+            });
+
+            const conteudoFiltrado = document.getElementById(`conteudo-${dataFormatada}`);
+            console.log('Conteúdo filtrado:', conteudoFiltrado); // Verifica se o conteúdo foi encontrado
+
+            if (conteudoFiltrado) {
+                conteudoFiltrado.style.display = 'block'; // Mostra o conteúdo correspondente
+            } else {
+                alert('Nenhum conteúdo encontrado para a data selecionada.');
+                conteudos.forEach(conteudo => conteudo.style.display = 'block'); // Mostra todos os conteúdos
+            }
+        }
+    </script>
+
+</body>
+</html>
